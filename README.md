@@ -1,66 +1,179 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+```markdown
+# ProductPackagingSelector
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
+**ProductPackagingSelector** is a tool designed to help select the most appropriate packaging for products based on various parameters like size, weight, and fragility. This project is built to be easy to use and customize, and can be integrated with other workflows to automate packaging decisions.
 
-## About Laravel
+## Features
+- Automated packaging selection based on product characteristics.
+- Customizable rules for packaging.
+- User-friendly command-line interface (CLI).
+- Designed for easy use in Visual Studio Code (VSCode).
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Prerequisites
+Ensure you have the following installed:
+- **Visual Studio Code** (VSCode) - [Download VSCode](https://code.visualstudio.com/)
+- **Python 3.x** - [Download Python](https://www.python.org/downloads/)
+- **pip** (Python package installer) - comes pre-installed with Python.
 
-## Learning Laravel
+### Steps
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Clone the repository:**
+   Open VSCode, then open a terminal in VSCode (View -> Terminal) and run:
+   ```bash
+   git clone https://github.com/robertgulatera/ProductPackagingSelector.git
+   cd ProductPackagingSelector
+   ```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. **Open the project in VSCode:**
+   You can open the project folder directly in VSCode by using the following command:
+   ```bash
+   code .
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Install Python extension for VSCode:**
+   If you haven't already, install the Python extension for Visual Studio Code:
+   - Go to the Extensions view (View -> Extensions).
+   - Search for "Python" and install the extension by Microsoft.
 
-## Laravel Sponsors
+4. **Create a virtual environment** (Optional but recommended):
+   In the terminal, create a virtual environment for the project:
+   ```bash
+   python3 -m venv venv
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+   To activate the virtual environment:
+   - On **Windows**:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - On **macOS/Linux**:
+     ```bash
+     source venv/bin/activate
+     ```
 
-### Premium Partners
+5. **Install dependencies:**
+   Install the required Python dependencies using `pip`:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+6. **Verify the installation:**
+   You can verify the installation by running:
+   ```bash
+   python product_packaging_selector.py --help
+   ```
+   Or by running any script in VSCode using the built-in terminal.
+
+## Usage
+
+### Running the Project in VSCode
+
+1. **Open `product_packaging_selector.py`**:
+   Once the project is loaded in VSCode, open the file `product_packaging_selector.py`.
+
+2. **Running the Script**:
+   You can run the script from VSCode using the terminal, or by pressing `F5` if your `launch.json` is properly set up for Python.
+
+   Example command to run:
+   ```bash
+   python product_packaging_selector.py --product_name "Sample Product" --size "Medium" --weight 1.5
+   ```
+
+3. **Available Command-Line Options**:
+   - `--product_name` : The name of the product (string).
+   - `--size` : The size of the product (e.g., "Small", "Medium", "Large").
+   - `--weight` : The weight of the product (in kilograms or pounds).
+   - `--material_type` : Optional packaging material type (e.g., "cardboard", "plastic").
+   - `--fragility` : Whether the product is fragile (e.g., "Fragile", "Non-fragile").
+
+4. **Example Command**:
+   ```bash
+   python product_packaging_selector.py --product_name "Glass Bottle" --size "Large" --weight 0.75 --fragility "Fragile"
+   ```
+   This command will output packaging suggestions based on the parameters provided.
+
+### Configuration
+The packaging selection logic is based on a set of rules, which can be customized in the `product_packaging_selector.py` script or the configuration files.
+
+- **config.json**: The configuration file contains default parameters for packaging selection, including material types, size categories, and fragility rules.
+
+### Customizing the Packaging Rules
+To modify the packaging selection logic:
+1. Open `product_packaging_selector.py` in VSCode.
+2. Adjust the code or add custom rules to suit your specific packaging needs.
+
+## Testing
+
+### Unit Tests
+To test the functionality of the **ProductPackagingSelector**, the project includes unit tests. You can run these tests using VSCode's built-in terminal and test framework integration.
+
+1. **Install Test Dependencies**:
+   If you haven't installed the testing dependencies, install them using the following command:
+   ```bash
+   pip install -r requirements-dev.txt
+   ```
+
+2. **Run Tests in VSCode**:
+   You can run tests directly from the terminal in VSCode:
+   ```bash
+   pytest
+   ```
+   Alternatively, use the **Python Test Explorer** in VSCode to run the tests interactively:
+   - Install the **Python Test Explorer** extension from the Extensions Marketplace.
+   - Open the Test Explorer panel in VSCode and click the "Run All" button to run the tests.
+
+3. **Run Specific Tests**:
+   To run tests for a specific module, use:
+   ```bash
+   pytest test_product_packaging.py
+   ```
+
+4. **Check Test Coverage**:
+   To check the test coverage, run:
+   ```bash
+   pytest --cov=product_packaging_selector
+   ```
 
 ## Contributing
+We welcome contributions to improve the **ProductPackagingSelector**! If you'd like to contribute, follow these steps:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. **Fork the repository**.
+2. **Clone your fork** to your local machine:
+   ```bash
+   git clone https://github.com/your-username/ProductPackagingSelector.git
+   ```
+3. **Create a new branch**:
+   ```bash
+   git checkout -b feature/your-feature
+   ```
+4. **Make your changes** and commit them:
+   ```bash
+   git commit -am 'Add new feature or fix'
+   ```
+5. **Push your changes** to your fork:
+   ```bash
+   git push origin feature/your-feature
+   ```
+6. **Create a Pull Request**.
 
 ## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```
+
+### Key Differences in This Version:
+- The setup and installation steps are described in the context of **VSCode**.
+- Instructions on using VSCode's integrated terminal and features (like the Python extension and Test Explorer) are included.
+- Running the script and tests is described with a focus on how to do so within the VSCode environment.
+
+Let me know if you'd like further adjustments or need additional details in the README!
