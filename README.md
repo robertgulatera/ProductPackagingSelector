@@ -1,7 +1,3 @@
-Certainly! Below is a `README.md` guide tailored for **VSCode** and **PHP Laravel** for the **ProductPackagingSelector** project:
-
----
-
 # ProductPackagingSelector
 
 ## Overview
